@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number Calculator</title>
+</head>
+<body>
+    <h1>Prime Number Calculator</h1>
+    <p>Enter two numbers:</p>
+    <input type="number" id="startNumber" placeholder="Start number">
+    <input type="number" id="endNumber" placeholder="End number">
+    <button onclick="calculatePrimes()">Calculate Primes</button>
+    <p id="result"></p>
+
+    <script>
+        function calculatePrimes() {
+            const start = parseInt(document.getElementById('startNumber').value);
+            const end = parseInt(document.getElementById('endNumber').value);
+            let primes = [];
+
+            for (let num = start; num <= end; num++) {
+                if (isPrime(num)) {
+                    primes.push(num);
+                }
+            }
+
+            document.getElementById('result').textContent = `Prime numbers between ${start} and ${end}: ${primes.join(', ')}`;
+        }
+
+        function isPrime(num) {
+            if (num <= 1) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
