@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Calculator</title>
+</head>
+<body>
+    <h1>Power Calculator</h1>
+    <p>Enter the base and exponent:</p>
+    <input type="number" id="base" placeholder="Base">
+    <input type="number" id="exponent" placeholder="Exponent">
+    <button onclick="calculatePower()">Calculate Power</button>
+    <p id="result"></p>
+
+    <script>
+        function calculatePower() {
+            const base = parseFloat(document.getElementById('base').value);
+            const exponent = parseInt(document.getElementById('exponent').value);
+            const result = Math.pow(base, exponent);
+            document.getElementById('result').textContent = `Result: ${result}`;
+        }
+    </script>
+</body>
+</html>
