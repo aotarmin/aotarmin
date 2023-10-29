@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Big Number Multiplication</title>
+    <style>
+        input[type="text"] {
+            width: 100%;
+            max-width: 400px;
+        }
+    </style>
 </head>
 <body>
     <h1>Big Number Multiplication</h1>
@@ -25,7 +31,10 @@
             // Calculate the product
             const product = bigNum1 * bigNum2;
 
-            document.getElementById('result').textContent = `Result: ${product}`;
+            // Format result with line breaks
+            const formattedResult = product.toString().replace(/\B(?=(\d{50})+(?!\d))/g, '<br>');
+
+            document.getElementById('result').innerHTML = `Result:<br>${formattedResult}`;
         }
     </script>
 </body>
