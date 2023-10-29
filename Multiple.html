@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Number Multiplication</title>
+</head>
+<body>
+    <h1>Big Number Multiplication</h1>
+    <p>Enter two numbers:</p>
+    <input type="text" id="number1" placeholder="Number 1">
+    <input type="text" id="number2" placeholder="Number 2">
+    <button onclick="calculateMultiplication()">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateMultiplication() {
+            const num1 = document.getElementById('number1').value;
+            const num2 = document.getElementById('number2').value;
+
+            // Convert input strings to BigInt
+            const bigNum1 = BigInt(num1);
+            const bigNum2 = BigInt(num2);
+
+            // Calculate the product
+            const product = bigNum1 * bigNum2;
+
+            document.getElementById('result').textContent = `Result: ${product}`;
+        }
+    </script>
+</body>
+</html>
